@@ -1,5 +1,5 @@
+"""key_generator.py"""
 import random
-
 class generate:
     def __init__(self,
                 num_of_atom = 5,
@@ -75,7 +75,6 @@ class generate:
         self.extras = extras
         self.seed = seed
         self.key = self.__gen_key()
-        
     def __gen_rand_sub_atom_val(self):
         if(self.type_of_value == 'hex'):
             sub_atom_val_code = random.randint(0-len(self.extras), 15)
@@ -103,16 +102,12 @@ class generate:
         elif(sub_atom_val_code > 35):
             sub_atom_val = self.extras[sub_atom_val_code - 36]
         return str(sub_atom_val)
-
-
     def __gen_rand_atom_val(self):
         num_of_sub_atom = random.randint(self.min_atom_len, self.max_atom_len)
         atom_val = str()
         for _ in range(num_of_sub_atom):
             atom_val += self.__gen_rand_sub_atom_val()
         return atom_val
-
-
     def __gen_key(self):
         random.seed(self.seed)
         if(self.min_atom_len > self.max_atom_len):
@@ -126,7 +121,5 @@ class generate:
                 gen_val += self.separator
         gen_val += self.__gen_rand_atom_val()
         return gen_val
-    
     def get_key(self):
         return self.key
-
