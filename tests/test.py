@@ -1,4 +1,7 @@
-from key_generator.key_generator import generate
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from key_generate.key_generator import generate
 from tqdm.auto import tqdm
 
 ##key1 = generate(5, '-', 3, 3, type_of_value = 'hex', capital = 'none', extras = ['%', '&', '^'], seed = 42).get_key()
