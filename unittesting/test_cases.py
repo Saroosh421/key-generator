@@ -1,9 +1,9 @@
 """test_cases.py"""
-from key_generate.key_generator import generate
+import unittest
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import unittest
+from key_generate.key_generator import generate
 class TestGenerate(unittest.TestCase):
     ("""
     Test cases for the generate function in the key_generator module.
