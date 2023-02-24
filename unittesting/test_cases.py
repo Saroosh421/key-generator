@@ -1,5 +1,6 @@
 """test_cases.py"""
 from req import *
+from key_generate.key_generator import generate
 class TestGenerate(unittest.TestCase):
     ("""
     Test cases for the generate function in the key_generator module.
