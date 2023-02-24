@@ -1,6 +1,6 @@
 import string
 import unittest
-from key_generator import generate
+from key_generator.key_generator import generate
 
 class TestGenerate(unittest.TestCase):
     
