@@ -1,3 +1,4 @@
+"""test_cases.py"""
 import unittest
 from key_generator.key_generator import generate
 class TestGenerate(unittest.TestCase):
