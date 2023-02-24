@@ -37,6 +37,6 @@ jobs:
         path: pytest.xml
 
     - name: Run pylint
-      run: pylint key_generate/key_generator.py
+      run: pylint unittesting/test_cases.py
     - name: run Black
-      run: black key_generate/key_generator.py
+      run: black unittesting/test_cases.py
