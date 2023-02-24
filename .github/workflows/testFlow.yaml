@@ -23,6 +23,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest
+        pip install pylint
+        pip install black
 
     - name: Run tests with pytest
       run: pytest unittesting/test_cases.py
@@ -33,3 +35,8 @@ jobs:
       with:
         name: test-results
         path: pytest.xml
+
+    - name: Run pylint
+        run: pylint unittesting/test_cases.py
+      - name: run Black
+        run: black unittesting/test_cases.py 
