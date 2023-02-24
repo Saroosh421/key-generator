@@ -25,7 +25,7 @@ jobs:
         pip install pytest
 
     - name: Run tests with pytest
-      run: pytest unittest\test.py
+      run: pytest unittest/test.py
 
     - name: Upload test results
       uses: actions/upload-artifact@v2
