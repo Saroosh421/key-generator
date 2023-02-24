@@ -10,62 +10,6 @@ class generate:
                 capital = 'none',
                 extras = [],
                 seed = None,):
-        """
-        Flexibly generates any type of key required. All props are optional and have a default value.
-        
-        Parameters
-        ----------
-        num_of_atom: int, default: 5
-            Number of parts AKA atoms of the key to be generated.
-        separator: string, list, default: '-'
-            Separates the parts AKA atoms by separator if given a string.
-            If given a list, randomly chooses separators in between the atoms.
-        min_atom_len: int, default: 3
-            Minimum length of each atom.
-        max_atom_len: int, default: 10
-            Maximum length of each atom. Randomly chooses each atom length between min and max value.
-        type_of_value: <'hex', 'char', 'int'>, default: 'hex'
-            Can be one of the following 3 values:
-            'hex' -> key can have values only between 0-9, a-f or A-F (depending on 'capital' parameter).
-            'char' -> key can have values only between a-f or A-F (depending on 'capital' parameter).
-            'int' -> key can have values only between 0-9.
-        capital: <'none', 'all', 'mix'>, default: 'none'
-            Can have one of the following 3 values:
-            'none' -> All of the values in the generated key will be lowercase
-            'all' -> All of the values in the generated key will be uppercase
-            'mix' -> A mix of both lower and upper case randomly.
-        extras: list, default: []
-            List of extra symbols or characters that you want to include in each atom/part.
-            Adds these symbols to the bucket to randomly choose characters in the atom.
-        seed: int, default: None
-            Choose a seed value for the random key generated. Returns the same
-            pseudo-random value everytime for a given seed value.
-
-        Returns
-        -------
-        object: `<key_generator.generate object>`
-
-        Examples
-        --------
-        Example 1:
-        >> from key_generator import generate
-        >> key = generate(seed = 101)
-        >> print(key.get_key())  # be1679-6ae28652eb-fa7cd6-de96-a8cc
-        
-        Example 2:
-        >> from key_generator import generate
-        >> key_custom = generate(5, '-', 3, 3, type_of_value = 'hex', capital = 'none', extras = ['%', '&', '^'], seed = 42).get_key()
-        >> print(key_custom)  # ^54-10e-fa&-%34-e3e
-        
-        Example 3:
-        >> import key_generator
-        >> key_custom_2 = key_generator.generate(2, ['-', ':'], 3, 10, type_of_value = 'char', capital = 'mix', seed = 17).get_key()
-        >> print(key_custom_2)  # ZLFdHXIUe-ekwJCu
-
-        More Info
-        ---------
-        See GitHub Repo: https://github.com/Sahith02/key-generator
-        """
         self.num_of_atom = num_of_atom
         self.separator = separator
         self.min_atom_len = min_atom_len
@@ -84,7 +28,6 @@ class generate:
             sub_atom_val_code = random.randint(0-len(self.extras), 9)
         else:
             raise ValueError("Parameter type_of_value takes only 'hex', 'char' or 'int'. Unsupported type '" + str(self.type_of_value) + "'")
-        
         if(sub_atom_val_code >= 10 and sub_atom_val_code <= 35):
             if(self.capital == 'none'):
                 starting_letter = 'a'
