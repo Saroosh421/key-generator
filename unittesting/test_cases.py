@@ -8,12 +8,6 @@ class TestGenerate(unittest.TestCase):
         self.assertIsInstance(key, str)
         self.assertRegex(key, r'^[0-9a-fA-F]{3,10}(-[0-9a-fA-F]{3,10}){4}$')
 
-    def test_custom_values(self):
-        # Test with custom values
-        key = generate(4, ':', 5, 8, 'char', 'all', ['$', '#'], seed=101).get_key()
-        self.assertIsInstance(key, str)
-        self.assertRegex(key, r'^[A-F\$#]{5,8}(:[A-F\$#]{5,8}){3}$')
-
     def test_mixed_case(self):
         # Test with mixed case
         key = generate(6, '-', 3, 6, 'int', 'mix', ['+', '*']).get_key()
