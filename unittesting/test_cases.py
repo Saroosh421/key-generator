@@ -23,9 +23,8 @@ class TestGenerate(unittest.TestCase):
         Test with invalid values.
         """)
         with self.assertRaises(ValueError):
-            key = generate(type_of_value='invalid_value')
+            generate(type_of_value='invalid_value')
         with self.assertRaises(ValueError):
-            key = generate(capital='invalid_value')
+            generate(capital='invalid_value')
 if __name__ == '__main__':
     unittest.main()
-
