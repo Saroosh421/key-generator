@@ -47,6 +47,6 @@ jobs:
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
         branch: master
-        commit-message: "Merge ali branch"
-        title: "Merge ali branch"
+        commit-message: "Merge saroosh branch"
+        title: "Merge saroosh branch"
         body: "This is an automated pull request created by GitHub Actions."
