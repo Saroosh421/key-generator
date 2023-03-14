@@ -41,14 +41,14 @@ jobs:
     - name: run Black
       run: black unittesting/test_cases.py
 
-    # - name: Merge to master branch
-    #   if: ${{ success() }}
-    #   uses: peter-evans/create-pull-request@v3
-    #   with:
-    #     token: ${{ secrets.ACCESS_TOKEN }}
-    #     branch: master
-    #     commit-message: "Merge ali branch"
-    #     title: "Merge ali branch"
-    #     body: "This is an automated pull request created by GitHub Actions."
+    - name: Merge to master branch
+      if: ${{ success() }}
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        branch: master
+        commit-message: "Merge saroosh branch"
+        title: "Merge saroosh branch"
+        body: "This is an automated pull request created by GitHub Actions."
 
 
