@@ -11,18 +11,18 @@ pipeline {
         }
         stage('Setup Python') {
             steps {
-                sh "python3 -m venv env"
-                sh "source env/bin/activate"
-                sh "pip install --upgrade pip"
-                sh "pip install -r requirements.txt"
-                sh "pip install pytest"
-                sh "pip install pylint"
-                sh "pip install black"
+                bat "python3 -m venv env"
+                bat "source env/bin/activate"
+                bat "pip install --upgrade pip"
+                bat "pip install -r requirements.txt"
+                bat "pip install pytest"
+                bat "pip install pylint"
+                bat "pip install black"
             }
         }
         stage('Run Tests') {
             steps {
-                sh "pytest unittesting/test_cases.py"
+                bat "pytest unittesting/test_cases.py"
             }
             post {
                 always {
@@ -32,8 +32,8 @@ pipeline {
         }
         stage('Code Linting') {
             steps {
-                sh "pylint unittesting/test_cases.py"
-                sh "black unittesting/test_cases.py"
+                bat "pylint unittesting/test_cases.py"
+                bat "black unittesting/test_cases.py"
             }
         }
         // stage('Merge to master branch') {
@@ -41,9 +41,9 @@ pipeline {
         //         expression { currentBuild.result == 'SUCCESS' }
         //     }
         //     steps {
-        //         sh "git checkout master"
-        //         sh "git merge ${env.BUILD_NUMBER} --no-ff -m 'Merge saroosh branch'"
-        //         sh "git push origin master"
+        //         bat "git checkout master"
+        //         bat "git merge ${env.BUILD_NUMBER} --no-ff -m 'Merge saroobat branch'"
+        //         bat "git push origin master"
         //     }
         // }
     }
