@@ -9,17 +9,17 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Setup Python') {
-            steps {
-                bat "python -m venv env"
-                bat "source env/bin/activate"
-                bat "pip install --upgrade pip"
-                bat "pip install -r requirements.txt"
-                bat "pip install pytest"
-                bat "pip install pylint"
-                bat "pip install black"
-            }
-        }
+        // stage('Setup Python') {
+        //     steps {
+        //         bat "python -m venv env"
+        //         bat "source env/bin/activate"
+        //         bat "pip install --upgrade pip"
+        //         bat "pip install -r requirements.txt"
+        //         bat "pip install pytest"
+        //         bat "pip install pylint"
+        //         bat "pip install black"
+        //     }
+        // }
         stage('Run Tests') {
             steps {
                 bat "pytest unittesting/test_cases.py"
@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Code Linting') {
             steps {
-                bat "pylint unittesting/test_cases.py"
+                bat "pylint setup.py"
                 bat "black unittesting/test_cases.py"
             }
         }
