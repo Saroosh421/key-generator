@@ -1,11 +1,10 @@
+"""Module for setting up the key_generator package."""
 from setuptools import setup
-
 def readme():
-    with open('README.md') as f:
-        README = f.read()
+    """Read the contents of the README file and return as a string."""
+    with open('README.md', encoding='utf-8') as readme_file:
+        README = readme_file.read()
     return README
-
-
 setup(
     name="key_generator",
     version="1.0.3",
