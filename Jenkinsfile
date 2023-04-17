@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Setup Python') {
             steps {
-                bat "python3 -m venv env"
-                bat "source env/bin/activate"
+                // bat "python3 -m venv env"
+                // bat "source env/bin/activate"
                 bat "pip install --upgrade pip"
                 bat "pip install -r requirements.txt"
                 bat "pip install pytest"
