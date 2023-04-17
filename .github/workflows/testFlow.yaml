@@ -37,7 +37,7 @@ jobs:
         path: pytest.xml
 
     - name: Run pylint
-      run: pylint unittesting/testcases.txt
+      run: pylint setup.py
     - name: run Black
       run: black unittesting/test_cases.py
 
