@@ -1,15 +1,15 @@
 """Module for setting up the key_generator package."""
 from setuptools import setup
-def readme():
+def get_readme():
     """Read the contents of the README file and return as a string."""
     with open('README.md', encoding='utf-8') as readme_file:
-        README = readme_file.read()
-    return README
+        readme = readme_file.read()
+    return readme
 setup(
     name="key_generator",
     version="1.0.3",
     description="A Simple python package to generate customizable keys.",
-    long_description=readme(),
+    long_description=get_readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/Sahith02/key-generator",
     author="Sahith Kurapati",
