@@ -2,8 +2,8 @@
 import unittest
 import os
 import sys
-from key_generate.key_generator import generate
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from key_generate.key_generator import generate
 class TestGenerate(unittest.TestCase):
     ("""
     Test cases for the generate function in the key_generator module.
